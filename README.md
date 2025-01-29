@@ -1,8 +1,8 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/tqM-lrvp)
 # CMPS 2200  Recitation 01
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**____Jackson Burch_____________________  
+**Name (Team Member 2):**___Joshua Burch______________________
 
 In this recitation, we will investigate asymptotic complexity. Additionally, we will get familiar with the various technologies we'll use for collaborative coding.
 
@@ -38,14 +38,14 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 
 - [ ] 3. Write at least two additional test cases in `test_binary_search` and confirm they pass.
 
-- [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`? 
+- [ ] 4. Describe the worst case input value of `key` for `linear_search`? for `binary_search`?
 
 **TODO: your answer goes here**
-
+ Worst case for linear search is O(n).This occurs when the last value in the list is the one you are searching for. Worst case for binary search is O(log n)
 - [ ] 5. Describe the best case input value of `key` for `linear_search`? for `binary_search`? 
 
 **TODO: your answer goes here**
-
+Best case for linear search is O(1).For linear this occurs if the first value in the list is the one you are searching for. Best case for binary search is O(1). This occurs when the middle value in the list is the one you are searching for.
 - [ ] 6. Complete the `time_search` function to compute the running time of a search function. Note that this is an example of a "higher order" function, since one of its parameters is another function.
 
 - [ ] 7. Complete the `compare_search` function to compare the running times of linear search and binary search. Confirm the implementation by running `pytest test_main.py::test_compare_search`, which contains some simple checks.
@@ -53,12 +53,22 @@ We'll compare the running times of `linear_search` and `binary_search` empirical
 - [ ] 8. Call `print_results(compare_search())` and paste the results here:
 
 **TODO: add your timing results here**
+|        n |   linear |   binary |
+|----------|----------|----------|
+|       10 |    0.003 |    0.004 |
+|      100 |    0.005 |    0.002 |
+|     1000 |    0.062 |    0.003 |
+|    10000 |    0.600 |    0.034 |
+|   100000 |    4.488 |    0.008 |
+|  1000000 |   52.441 |    0.015 |
+| 10000000 |  462.170 |    0.016 |
 
 - [ ] 9. The theoretical worst-case running time of linear search is $O(n)$ and binary search is $O(log_2(n))$. Do these theoretical running times match your empirical results? Why or why not?
 
 **TODO: your answer goes here**
+Yes theese theoretical running time match the empirical results. For linear search the the runtime increases proportionally with increases in input sizes. The runtimes increase by roughly 10x for every 10x increase of input size n. Thus the linear search results is consistent with an O(n) growth rate. For binary search the runtimes increases at a low rate even as the input sizes increase dramatically. The binary search runtime results are consistent with a O(log n) growth rate.
 
 - [ ] 10. Binary search assumes the input list is already sorted. Assume it takes $\Theta(n^2)$ time to sort a list of length $n$. Suppose you know ahead of time that you will search the same list $k$ times. 
-  + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? **TODO: your answer goes here**
-  + For binary search? **TODO: your answer goes here**
-  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? **TODO: your answer goes here**
+  + What is worst-case complexity of searching a list of $n$ elements $k$ times using linear search? **TODO: your answer goes here** The worst-case complexity would be O(k*n) 
+  + For binary search? **TODO: your answer goes here**Theta(n^2) + O(k*log n)
+  + For what values of $k$ is it more efficient to first sort and then use binary search versus just using linear search without sorting? **TODO: your answer goes here** for k >n it would be more efficient to use sorting and binary search
